@@ -1,0 +1,6 @@
+{
+  "name": "MongoDB",
+  "description": "Get started with a MongoDB database",
+  "icon": "./static/logo.png",
+  "params": []
+}
