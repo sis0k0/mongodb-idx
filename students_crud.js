@@ -1,7 +1,7 @@
 import { MongoClient } from 'mongodb';
 
 export async function executeStudentCrudOperations() {
-  const uri = process.env.DB_URI || "mongodb://localhost:27017/";
+  const uri = process.env.MONGODB_CONNECTION_STRING;
     let mongoClient;
 
     try {
@@ -30,13 +30,13 @@ export async function connectToCluster(uri) {
 
     try {
         mongoClient = new MongoClient(uri);
-        console.log('Connecting to MongoDB Atlas cluster...');
+        console.log('Connecting to MongoDB...');
         await mongoClient.connect();
-        console.log('Successfully connected to MongoDB Atlas!');
+        console.log('Successfully connected to MongoDB!');
 
         return mongoClient;
     } catch (error) {
-        console.error('Connection to MongoDB Atlas failed!', error);
+        console.error('Connection to MongoDB failed!', error);
         process.exit();
     }
 }

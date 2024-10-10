@@ -6,7 +6,7 @@
   ];
 
   env = {
-    MONGODB_CONNECTION_STRING = "mongodb://localhost:27017/library";
+    MONGODB_CONNECTION_STRING = "mongodb://localhost:27017/";
   };
 
   services.mongodb = {
@@ -15,7 +15,7 @@
 
   idx = {
     extensions = [
-      # TODO: Add MongoDB Extension
+      "mongodb.mongodb-vscode"
     ];
 
     workspace = {
