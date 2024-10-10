@@ -26,6 +26,7 @@
         ];
       };
       onStart = {
+        start-database = "mongod --port 27017 --fork --logpath ./.idx/database.log --dbpath ./.idx/.data";
         run-index = "node index.js";
       };
     };
