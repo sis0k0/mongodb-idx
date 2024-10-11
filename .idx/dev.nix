@@ -1,8 +1,8 @@
 { pkgs, ... }: {
-  channel = "stable-23.11"; # or "unstable"
+  channel = "stable-23.11";
 
   packages = [
-    pkgs.nodejs_20
+    pkgs.nodejs_22
   ];
 
   env = {

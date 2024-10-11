@@ -2,9 +2,8 @@
   "name": "mongodb-idx",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "type": "module",
-  "author": "",
+  "author": "Stanimira Vlaeva <stanimira.vlaeva@mongodb.com>",
   "license": "ISC",
   "dependencies": {
     "mongodb": "^6.9.0"

@@ -2,5 +2,19 @@
   "name": "MongoDB",
   "description": "Get started with a MongoDB database",
   "icon": "./static/logo.png",
-  "params": []
+  "publisher": "MongoDB",
+  "params": [
+    {
+      "id": "environment",
+      "name": "Which environment would you like to use?",
+      "type": "enum",
+      "extension": "blank",
+      "options": {
+        "blank": "Blank Node.js project with a MongoDB database connection",
+        "express": "REST API with Express and MongoDB",
+        "flask": "REST API with Flask and MongoDB"
+      },
+      "required": true
+    }
+  ]
 }
