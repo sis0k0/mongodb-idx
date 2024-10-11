@@ -1,6 +1,6 @@
 # MongoDB
 
-<a href="https://idx.google.com/new?template=https%3A%2F%2Fgithub.com%2Fsis0k0%2Fmongodb-idx">
+<a href="https://idx.google.com/new?template=https%3A%2F%2Fgithub.com%2Fsis0k0%2Fmongodb-idx" target="_blank">
   <picture>
     <source
       media="(prefers-color-scheme: dark)"

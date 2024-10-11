@@ -1,7 +1,7 @@
 {
   "name": "MongoDB",
   "description": "Get started with a MongoDB database",
-  "icon": "./static/logo.png",
+  "icon": "https://webimages.mongodb.com/_com_assets/cms/kuyjf3vea2hg34taa-horizontal_default_slate_blue.svg",
   "publisher": "MongoDB",
   "params": [
     {
@@ -10,7 +10,7 @@
       "type": "enum",
       "extension": "blank",
       "options": {
-        "blank": "Blank Node.js project with a MongoDB database connection",
+        "blank": "Node.js CRUD with a MongoDB connection",
         "express": "REST API with Express and MongoDB",
         "flask": "REST API with Flask and MongoDB"
       },

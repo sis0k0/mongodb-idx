@@ -2,7 +2,7 @@
   channel = "stable-23.11";
 
   packages = [
-    pkgs.nodejs_22
+    pkgs.nodejs_20
   ];
 
   env = {
@@ -22,12 +22,12 @@
       onCreate = {
         npm-install = "npm install";
         default.openFiles = [
-          "index.js" "README.md"
+          "server.js" "database.js"
         ];
       };
       onStart = {
         start-database = "mongod --port 27017 --fork --logpath ./.idx/database.log --dbpath ./.idx/.data";
-        run-index = "node index.js";
+        run-index = "node server.js";
       };
     };
 
