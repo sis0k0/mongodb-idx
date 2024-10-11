@@ -4,3 +4,4 @@
     chmod -R +w "$WS_NAME"
     mv "$WS_NAME" "$out"
   '';
+}
