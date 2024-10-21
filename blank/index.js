@@ -1,17 +1,25 @@
 const { MongoClient } = require('mongodb');
 
-async function main() {
+const databaseConfiguration = {
     /**
-     * Connection URI for a MongoDB instance. By default, this the local instance running in Project IDX.
-     * See https://docs.mongodb.com/drivers/node/ for more details.
+     * Connection URI for the local MongoDB instance, running on the default port.
+     * See https://www.mongodb.com/docs/v6.2/reference/connection-string/ for more details.
      */
-    const uri = process.env.MONGODB_CONNECTION_STRING;
+    uri: 'mongodb://localhost:27017/',
 
+    /**
+     * Database and collection names. Replace with your own database and collection names.
+     */
+    databaseName: 'my_database',
+    collectionName: 'users'
+}
+
+async function main() {
     /**
      * The MongoDB client instance to connect and interact with the database. 
      * See https://mongodb.github.io/node-mongodb-native/3.6/api/MongoClient.html for more details.
      */
-    const client = new MongoClient(uri, {
+    const client = new MongoClient(databaseConfiguration.uri, {
         /**
          * Specify the Server API version for long-term API stability.
          * See https://www.mongodb.com/docs/manual/reference/stable-api/
@@ -21,7 +29,7 @@ async function main() {
 
     try {
         await client.connect();
-        const db = client.db('my_database');
+        const db = client.db(databaseConfiguration.databaseName);
 
         /**
          * Create a collection with a validator to enforce data integrity.
@@ -29,7 +37,7 @@ async function main() {
          * See https://www.mongodb.com/docs/manual/core/schema-validation/ for more details.
          */
         try {
-            await db.createCollection('users', {
+            await db.createCollection(databaseConfiguration.collectionName, {
                 validator: {
                     $jsonSchema: {
                         bsonType: 'object',
@@ -60,7 +68,7 @@ async function main() {
             }
         }
 
-        const collection = db.collection('users');
+        const collection = db.collection(databaseConfiguration.collectionName);
 
         // Insert documents into the collection.
         console.log("Inserting documents into the collection..");

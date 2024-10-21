@@ -2,7 +2,7 @@
   channel = "stable-23.11";
 
   packages = [
-    pkgs.nodejs_20
+    pkgs.python3
   ];
 
   services.mongodb = {
@@ -11,19 +11,20 @@
 
   idx = {
     extensions = [
+      "ms-python.python",
       "mongodb.mongodb-vscode"
     ];
 
     workspace = {
       onCreate = {
-        npm-install = "npm install";
+        install = "python -m venv .venv && source .venv/bin/activate && pip install -r requirements.txt";
         default.openFiles = [
-          "server.js" "database.js" "README.md"
+          "app.py" "README.md"
         ];
       };
       onStart = {
         start-database = "mongod --port 27017 --fork --logpath ./.idx/database.log --dbpath ./.idx/.data";
-        run-server = "node server.js";
+        run-server = "./devserver.sh";
       };
     };
 

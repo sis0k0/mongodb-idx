@@ -11,6 +11,15 @@ const collection = database.collection(collectionName);
 
 const router = Router();
 
+function toObjectId(stringId) {
+    try {
+        return ObjectId.createFromHexString(stringId);
+    } catch (error) {
+        console.error(error);
+        throw new Error('Invalid ID');
+    }
+}
+
 // Create (POST) - Add a new user
 router.post('/', async (req, res) => {
     const newDocument = req.body;
@@ -62,7 +71,7 @@ router.get('/email/:email', async (req, res) => {
     return res.status(200).json(user);
 });
 
-// Update (PUT) - Update a user by ID
+// Update (PUT) - Update an existing user by ID
 router.put('/:id', async (req, res) => {
     const id = req?.params?.id;
     const updatedDocument = req.body;
@@ -110,14 +119,5 @@ router.delete("/:id", async (req, res) => {
 
     return res.status(200).send(result);
 });
-
-function toObjectId(stringId) {
-    try {
-        return ObjectId.createFromHexString(stringId);
-    } catch (error) {
-        console.error(error);
-        throw new Error('Invalid ID.');
-    }
-}
 
 module.exports = router;

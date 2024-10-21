@@ -10,7 +10,7 @@
       "type": "enum",
       "default": "blank",
       "options": {
-        "blank": "Node.js CRUD with a MongoDB connection",
+        "blank": "Node.js script with a MongoDB connection",
         "express": "REST API with Express and MongoDB",
         "flask": "REST API with Flask and MongoDB"
       },
