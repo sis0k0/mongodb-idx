@@ -10,5 +10,5 @@ The server should run automatically on port `3000` when starting a workspace. To
 node server.js
 ```
 
-1. Use the MongoDB extension from the left-hand sidebar to connect to the local database instance — `localhost:27017`.
+1. Use the MongoDB extension from the left-hand sidebar to connect to the local database instance — `mongodb://localhost:27017`.
 1. Open the `server.js` file to view the implementation.
