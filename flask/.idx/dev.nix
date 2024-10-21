@@ -11,7 +11,7 @@
 
   idx = {
     extensions = [
-      "ms-python.python",
+      "ms-python.python"
       "mongodb.mongodb-vscode"
     ];
 
